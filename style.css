@@ -1,0 +1,185 @@
+/* :root armazena as variáveis de cor para fácil gerenciamento */
+:root {
+    --cor-fundo: #f4f4f9;
+    --cor-container: #fff;
+    --cor-texto: #333;
+    --cor-titulo: #0056b3;
+    --cor-borda: #eee;
+    --cor-tag: #e9ecef;
+    --cor-sombra: rgba(0,0,0,0.1);
+}
+
+body.dark-mode {
+    --cor-fundo: #121212;
+    --cor-container: #1e1e1e;
+    --cor-texto: #f1f1f1;
+    --cor-titulo: #60a5fa;
+    --cor-borda: #333;
+    --cor-tag: #3a3a3a;
+    --cor-sombra: rgba(255,255,255,0.1);
+}
+
+/* Configurações Globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: var(--cor-container);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    transition: background-color 0.3s;
+}
+
+/* Cabeçalho e Foto */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative; /* Necessário para posicionar o switch */
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--cor-borda);
+}
+
+header h1 {
+    margin: 10px 0 5px;
+    color: var(--cor-titulo);
+}
+
+header h2 {
+    margin: 0;
+    font-weight: 300;
+    color: #888;
+}
+
+/* Seções */
+section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h3 {
+    color: var(--cor-titulo);
+    margin-bottom: 20px;
+}
+
+/* --- NOVO ESTILO PARA AS SKILLS --- */
+#skills .skills-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    gap: 12px; /* Espaçamento entre as tags */
+}
+
+#skills .skill-tag {
+    background-color: var(--cor-tag);
+    color: var(--cor-texto);
+    padding: 8px 15px;
+    border-radius: 20px; /* Bordas arredondadas */
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Seção de Projetos */
+.projeto-card {
+    background: var(--cor-fundo); /* Usa a cor de fundo do body */
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.projeto-card a {
+    text-decoration: none;
+    color: #fff;
+    background: var(--cor-titulo);
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.projeto-card a:hover {
+    opacity: 0.8;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+
+/* --- NOVO ESTILO PARA O BOTÃO DARK MODE --- */
+.theme-switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 26px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--cor-titulo);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
