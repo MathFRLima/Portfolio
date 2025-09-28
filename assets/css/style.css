@@ -125,9 +125,15 @@ h3 {
 /* Rodapé */
 footer {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
     color: #777;
 }
+
+footer .link-portfolio {
+    text-decoration: none;
+    color: var(--cor-texto);
+}
+
 
 /* --- NOVO ESTILO PARA O BOTÃO DARK MODE --- */
 .theme-switch {
