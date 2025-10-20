@@ -122,6 +122,14 @@ h3 {
     opacity: 0.8;
 }
 
+.experiencia-card {
+    background: var(--cor-fundo); /* Usa a cor de fundo do body */
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
 /* Rodapé */
 footer {
     text-align: center;
